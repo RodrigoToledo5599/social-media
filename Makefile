@@ -1,6 +1,20 @@
 create-network:
 	docker network create social-media
 
+app-run:
+	cd social-media-api && npm run start
+
+migrate-db:
+	cd social-media-api && npx prisma migrate deploy
+
+create-migrations:
+	cd social-media-api && npx prisma migrate dev
+
+up-db:
+	docker compose up db -d
+
+down-db:
+	docker compose down db
 
 
 

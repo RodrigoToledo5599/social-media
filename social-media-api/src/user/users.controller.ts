@@ -13,6 +13,11 @@ import { UserGuard } from './guards/user.guard';
 export class UserController {
   constructor(private readonly userService: UserService) { }
 
+  @Get('test')
+  async test() {
+    return "deu bão";
+  }
+
   @Post('create-user')
   async createUser(
     @Body() params: CreateUserRequestDto
